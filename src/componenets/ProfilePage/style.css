@@ -1,21 +1,14 @@
 
 
-.profile{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
 .profile-icon{
     border-radius: 50%;
     height: 250px;
     margin: 0 30px;
 }
 
-
 .profile-info{
-    
-    margin: 30px;
+    width: 70%;
+    margin: 30px 0;
     text-align: center;
     text-align: justify;
 }
@@ -25,6 +18,9 @@
     margin: 0;
 }
 
+.modifier-form{
+    width: 100%;
+}
 
 
 .upload .round{
@@ -46,4 +42,19 @@
     transform: scale(2);
     opacity: 0;
     cursor: pointer;
+}
+
+.profile{
+    
+    gap: 80px;
+}
+
+@media screen and (max-width:800px){
+    .d-flex{
+        flex-direction: column !important;
+    }
+    .profile{
+        gap: 20px;
+    }
+    
 }

@@ -32,7 +32,7 @@ export default function SignUp() {
           Numero de telephone
           </label>
           <input
-            type="text"
+            type="tel"
             id="disabledTextInput"
             className="form-control"
             placeholder="Numero de telephone"
@@ -63,7 +63,8 @@ export default function SignUp() {
           ></input>
         </div>
         <input type="file" id="myFile" name="filename"></input>
-        <br /><button type="submit" className="btn btn-primary b">
+        <br />
+        <button type="submit" className="btn btn-primary b">
         continuer
         </button>
       </form>
