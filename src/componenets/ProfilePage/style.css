@@ -1,0 +1,49 @@
+
+
+.profile{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-icon{
+    border-radius: 50%;
+    height: 250px;
+    margin: 0 30px;
+}
+
+
+.profile-info{
+    
+    margin: 30px;
+    text-align: center;
+    text-align: justify;
+}
+
+.title{
+    font-weight: 700;
+    margin: 0;
+}
+
+
+
+.upload .round{
+    position: relative;
+    bottom: 60px;
+    left: 230px;
+    color: white;
+    background: #1B71FA ;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.upload .round input[type='file']{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+    cursor: pointer;
+}
