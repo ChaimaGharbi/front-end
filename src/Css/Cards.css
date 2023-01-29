@@ -1,0 +1,18 @@
+.row{
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.column{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.block{
+    margin: auto;
+    width: 90%;
+    border: 3px solid #000000;
+    padding: 10px;
+  
+}
+
+

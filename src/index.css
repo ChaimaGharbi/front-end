@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.redheart{
+  color:'red' ;
+  font-size: '30px';
+  float: 'right';
+}
