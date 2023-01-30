@@ -14,7 +14,7 @@ export default class OrderCards extends React.Component{
     render(){
         return(
             <section className="block">
-            <Container rowSpacing={1} >
+            <Container className="sousblock" >
             <Row className="row">
                 {
                     this.props.products.map((p)=>{
