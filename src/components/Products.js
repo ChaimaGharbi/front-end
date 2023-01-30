@@ -16,7 +16,7 @@ export default function Products(props) {
   return (
     <MDBContainer fluid className="my-5 text-center">
       <h4 className="mt-4 mb-5">
-        <strong>Product List</strong>
+        {props.name === "order" ? <strong>Orders</strong> : <strong>Product List</strong>}
       </h4>
       <MDBRow>
         {products.map((product) => {
