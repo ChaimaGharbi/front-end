@@ -7,9 +7,9 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 export default function Fab() {
   return (
     <Container>
-      <Link to={"/Hello"}>
+      <Link to={"/AddProduct"}>
         <Button
-          tooltip="add Product"
+          tooltip="ajouter Produit"
           className="fab-item btn btn-link btn-lg text-white bg-black"
           rotate={true}
         >

@@ -3,6 +3,7 @@ import React from "react";
 import Products from "./components/Products";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Fab from "./components/Fab";
+import AddProduct from "./components/AddProduct";
 
 function App() {
   return (
@@ -12,19 +13,13 @@ function App() {
           path="/"
           element={
             <>
-              <Products></Products>
+              <Products name="products"></Products>
               <Fab></Fab>
             </>
           }
         ></Route>
-        <Route
-          path="/Hello"
-          element={
-            <div>
-              <h1>Hello World!</h1>
-            </div>
-          }
-        ></Route>
+        <Route path="/addProduct" element={<AddProduct></AddProduct>}></Route>
+        <Route path="/orders" element={<Products name="order"></Products>}></Route>
       </Routes>
     </Router>
   );
