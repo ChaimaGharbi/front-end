@@ -5,23 +5,23 @@ import "./style.css";
 import React from "react";
 
 export default class NavBarCommercant extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {clicked:false}
+    this.state = { clicked: false };
   }
 
-  handleClick = () =>{
-    this.setState({clicked:!this.state.clicked})
-  }
-  
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked });
+  };
+
   render() {
     return (
       <div className="navbaritems">
         <h1 className="logo">logo</h1>
         <div className="menu-icons" onClick={this.handleClick}>
-          <i className={this.state.clicked?"fas fa-times":"fas fa-bars"}></i>
+          <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
-        <ul className={this.state.clicked? "nav-menu active":"nav-menu"}>
+        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
           <li>
             <a href="#" className="link">
               <AiFillShopping className="icon" />
