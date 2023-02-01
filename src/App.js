@@ -1,3 +1,6 @@
+import NavBarCommercant from './componenets/NavBarCommercant/index';
+import ProfilePage from './componenets/ProfilePage';
+import SignUp from './componenets/SignUppage';
 import "./App.css";
 import React from "react";
 import Products from "./components/Products";
