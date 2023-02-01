@@ -7,14 +7,15 @@ import {
   MDBCardImage,
   MDBRipple,
 } from "mdb-react-ui-kit";
-import products from "../products.json";
+import products from "../../products.json";
+import "./style.css";
 
 export default function Products(props) {
   const handleDelete = () => {
     window.confirm("Are you sure you want to delete this item?");
   };
   return (
-    <MDBContainer fluid className="my-5 text-center">
+    <MDBContainer className="my-5 text-center">
       <h4 className="mt-4 mb-5">
         {props.name === "order" ? <strong>Orders</strong> : <strong>Product List</strong>}
       </h4>
@@ -22,7 +23,7 @@ export default function Products(props) {
         {products.map((product) => {
           return (
             <MDBCol md="12" lg="4" className="mb-4">
-              <MDBCard key={product.id}>
+              <MDBCard key={product.id} className="mdb-card">
                 <MDBRipple
                   rippleColor="light"
                   rippleTag="div"

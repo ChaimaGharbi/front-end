@@ -1,8 +1,8 @@
 import "./App.css";
 import React from "react";
-import Products from "./components/Products";
+import Products from "./components/Products/Products";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Fab from "./components/Fab";
+import Fab from "./components/Fab/Fab";
 import AddProduct from "./components/AddProduct";
 import NavBarCommercant from "./components/NavBarCommercant/index";
 import ProfilePage from "./components/ProfilePage";

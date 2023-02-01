@@ -48,6 +48,7 @@
 
 @media screen and (max-width:700px){
     .navbaritems{
+        position: relative;
         z-index: 99;
     }
 
