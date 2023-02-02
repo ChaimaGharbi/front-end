@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './Atoms/Navbar';
 import Profile from './Profile/Profile';
+import SignUp from './SignUp/SignUp';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Navbar />
     <Profile />
+    
   </React.StrictMode>
 );
 
