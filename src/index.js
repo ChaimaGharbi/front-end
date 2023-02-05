@@ -6,14 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import Navbar from './Atoms/Navbar';
 import Profile from './Profile/Profile';
 import SignUp from './SignUp/SignUp';
+import Login from './Login/Login';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Navbar />
-    <Profile />
     
+    <Login />
+
   </React.StrictMode>
 );
 
