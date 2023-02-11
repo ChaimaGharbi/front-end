@@ -1,5 +1,4 @@
 import React from "react";
-import { FaHeart } from "react-icons/fa";
 import '../Css/Cards.css';
 import FavoriteCard from '../Components/FavoriteCard';
 import Container from 'react-bootstrap/Container';

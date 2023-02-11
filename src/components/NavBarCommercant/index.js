@@ -29,12 +29,12 @@ export default class NavBarCommercant extends React.Component {
           </li>
           <li>
             <a href="#" className="link">
-              <CgProfile className="icon" /> Profile
+              <CgProfile className="icon" />
             </a>
           </li>
           <li>
             <a href="#" className="link">
-              <AiFillHome className="icon" /> Home
+              <AiFillHome className="icon" />
             </a>
           </li>
           <li>

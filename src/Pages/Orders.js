@@ -1,5 +1,5 @@
-import OrderCards from 'C:\\Users\\arwa\\projetweb4\\src\\Components\\OrderCards.js';
-import {data} from 'C:\\Users\\arwa\\projetweb4\\src\\Components\\Data';
+import OrderCards from '../Components/OrderCards.js';
+import {data} from '../Components/Data';
 export default function Favorites(){
  
         return(

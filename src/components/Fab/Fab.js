@@ -7,7 +7,7 @@ import "./style.css";
 export default function Fab() {
   return (
     <Container className="rfab__container">
-      <Link to={"/AddProduct"}>
+      <Link to={"AddProduct"}>
         <Button
           tooltip="ajouter Produit"
           className="fab-item btn btn-link btn-lg text-white bg-black"

@@ -9,6 +9,7 @@ import {
 } from "mdb-react-ui-kit";
 import products from "../../products.json";
 import "./style.css";
+import pencils from '../../Images/pencils.jpg';
 
 export default function Products(props) {
   const handleDelete = () => {
@@ -30,7 +31,7 @@ export default function Products(props) {
                   className="bg-image rounded hover-zoom"
                 >
                   <MDBCardImage
-                    src={product.imageURL}
+                    src={pencils}
                     fluid
                     className="w-100"
                     style={{ height: "250px", width: "450px" }}

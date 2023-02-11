@@ -1,19 +1,21 @@
 import "./App.css";
 import React from "react";
-import Products from "./components/Products/Products";
+import Products from "./Components/Products/Products";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Fab from "./components/Fab/Fab";
-import AddProduct from "./components/AddProduct";
-import NavBarCommercant from "./components/NavBarCommercant/index";
-import ProfilePage from "./components/ProfilePage";
-import SignUp from "./components/SignUpPage";
+import Fab from "./Components/Fab/Fab";
+import AddProduct from "./Components/AddProduct";
+import NavBarCommercant from "./Components/NavBarCommercant/index";
+import ProfilePage from "./Components/ProfilePage";
+import SignUp from "./Components/SignUpPage";
+import Favorites from './Pages/Favorites';
+import Orders from './Pages/Orders';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route
-          path="/"
+          path="commerçant/products"
           element={
             <>
               <NavBarCommercant />
@@ -23,7 +25,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="/addProduct"
+          path="commerçant/products/addProduct"
           element={
             <>
               <NavBarCommercant />
@@ -32,7 +34,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="/orders"
+          path="commerçant/orders"
           element={
             <>
               <NavBarCommercant />
@@ -41,7 +43,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="/signup"
+          path="commerçant/signup"
           element={
             <>
               <NavBarCommercant />
@@ -50,11 +52,45 @@ function App() {
           }
         ></Route>
         <Route
-          path="/profile"
+          path="commerçant/profile"
           element={
             <>
               <NavBarCommercant />
               <ProfilePage />
+            </>
+          }
+        ></Route>
+        <Route
+          path='/'
+          element={
+            <></>
+          }
+        ></Route>
+        <Route
+          path='/signup'
+          element={
+            <></>
+          }
+        ></Route>
+        <Route
+          path='/profile'
+          element={
+            <></>
+          }
+        ></Route>
+        <Route
+          path='/favoris'
+          element={
+            <>
+              <Favorites></Favorites>
+            </>
+          }
+        ></Route>
+        <Route
+          path='/commandes'
+          element={
+            <>
+              <Orders></Orders>
             </>
           }
         ></Route>

@@ -1,6 +1,6 @@
-import FavoriteCards from 'C:\\Users\\arwa\\projetweb4\\src\\Components\\FavoriteCards.js';
+import FavoriteCards from '../Components/FavoriteCards.js';
+import {data} from '../Components/Data';
 
-import {data} from 'C:\\Users\\arwa\\projetweb4\\src\\Components\\Data';
 export default function Favorites(){
  
         return(
