@@ -23,17 +23,17 @@ export default class NavBarCommercant extends React.Component {
         </div>
         <ul className={this.state.clicked ? `${styles.nav_menu1} ${styles.active1}` : `${styles.nav_menu1}`}>
           <li>
-            <a href="orders" className={styles.link1}>
+            <a href="/commerçant/orders" className={styles.link1}>
               <AiFillShopping className={styles.icon1} />Orders
             </a>
           </li>
           <li>
-            <a href="profile" className={styles.link1}>
+            <a href="/commerçant/profile" className={styles.link1}>
               <CgProfile className={styles.icon1} />Profile
             </a>
           </li>
           <li>
-            <a href="products" className={styles.link1}>
+            <a href="/commerçant" className={styles.link1}>
               <AiFillHome className={styles.icon1} />Home
             </a>
           </li>

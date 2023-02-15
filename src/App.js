@@ -20,7 +20,7 @@ function App() {
     <Router>
       <Routes>
         <Route
-          path="commerçant/products"
+          path="commerçant"
           element={
             <>
               <NavBarCommercant />
@@ -30,7 +30,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="commerçant/products/addProduct"
+          path="commerçant/addProduct"
           element={
             <>
               <NavBarCommercant />

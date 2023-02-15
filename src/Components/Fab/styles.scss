@@ -1,0 +1,48 @@
+.fab-container {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column-reverse;
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+  max-height: 52px;
+  z-index: 1000;
+
+  li {
+    border-radius: 50%;
+    box-shadow: 0 3px 6px lightgrey;
+    display: grid;
+    place-items: center;
+    margin: 8px 0;
+    font-size: 28px;
+    padding: 12px;
+    cursor: pointer;
+  }
+
+  .fab-button {
+    background-color: #00a8ff;
+    color: white;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    font-size: 28px;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    z-index: 1000;
+    svg {
+      fill: white;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .fab-button:hover {
+    background-color: #00a8ff;
+    color: white;
+    box-shadow: 0 3px 6px lightgrey;
+  }
+}
