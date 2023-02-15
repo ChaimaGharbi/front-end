@@ -1,5 +1,5 @@
 import React from "react";
-import '../Css/Cards.css';
+import './Css/Cards.css';
 import OrderCard from './OrderCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -18,7 +18,7 @@ export default class OrderCards extends React.Component{
                 {
                     this.props.products.map((p)=>{
                         return(
-                            <Col className="column" sm={3}>
+                            <Col className="column" sm={1} md={2} lg={3}>
                                <div className="col">
                                   <OrderCard product={p} />
                               </div>

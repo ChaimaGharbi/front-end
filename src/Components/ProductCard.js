@@ -2,7 +2,7 @@ import React from "react";
 import {FiHeart} from 'react-icons/fi';
 import { BsFillBasketFill } from "react-icons/bs";
 import { Card, Row, Col } from 'react-bootstrap';
-import '../Css/Card.css';
+import './Css/Card.css';
 
 
 export default class ProductCard extends React.Component{
@@ -16,7 +16,7 @@ export default class ProductCard extends React.Component{
     render(){
         return(
             <div>
-               <Card style={{ width: '18rem' }}>
+               <Card style={{ width: '17rem' }}>
                      <Card.Header>
                         <Row>
                             <Col>

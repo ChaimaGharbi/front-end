@@ -11,9 +11,8 @@
      
 }
 .image{
-     width: 150px;
+     width: 200px;
      height: 150px;
-
 }
 .icon{
     font-size: 35px;
@@ -25,16 +24,14 @@
      cursor: pointer;
      font-weight: bold;
      float:right;
-     opacity: 1;
-
-     
+     opacity: 1;  
 }
 
 .icon:hover{
 animation: heartbeat 1s infinite;
 opacity: 1;
 transform: 500ms;
-    }
+}
 
 
  

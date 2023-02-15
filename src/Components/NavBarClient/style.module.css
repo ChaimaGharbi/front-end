@@ -1,4 +1,4 @@
-.navbaritems{
+.navbaritems1{
     margin: 20px auto;
     display: flex;
     justify-content: space-between;
@@ -12,47 +12,47 @@
     height: 80px;
 }
 
-.logo{
+.logo1{
     cursor: pointer;
     font-weight: 600;
     color: #707172;
 }
 
 
-.nav-menu{ 
+.nav_menu1{ 
     display: flex;
     list-style: none;
     gap: 25px;
     margin-top: 20px;
 }
 
-.icon{
+.icon1{
     font-size: 40px;
     margin-bottom: 6px;
 }
 
-.link{
+.link1{
     color: #707172;
     text-decoration: none;
 }
 
-.fas{
+.fas1{
     color: #707172;
     font-size: 30px;
     
 }
 
-.menu-icons{
+.menu_icons1{
     display: none;
 }
 
 @media screen and (max-width:700px){
-    .navbaritems{
+    .navbaritems1{
         position: relative;
         z-index: 99;
     }
 
-    .nav-menu{
+    .nav_menu1{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -72,23 +72,23 @@
         transition: all 0.3s ease-in-out;
     }
     
-    .link{
+    .link1{
         display: block;
         widows: 100%;
         padding: 2rem 0;
 
     }
-    .logo{
+    .logo1{
         z-index: 1;
     }
     
     
-    .menu-icons{
+    .menu_icons1{
         display: block;
         z-index: 1;
     }
 
-    .nav-menu.active{
+    .nav_menu1.active1{
         left: 2.5%;
     }
 }

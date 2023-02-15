@@ -1,8 +1,7 @@
 import React from "react";
-import {FaHeart} from 'react-icons/fa';
 import { BsFillBasketFill } from "react-icons/bs";
 import { Card, Row, Col } from 'react-bootstrap';
-import '../Css/Card.css';
+import './Css/Card.css';
 
 
 export default class OrderCard extends React.Component{
@@ -15,7 +14,7 @@ export default class OrderCard extends React.Component{
       
         return(
             <div>
-               <Card style={{ width: '18rem' }}>
+               <Card style={{ width: '17rem' }}>
                      <Card.Header>
                         <Row>
                             <Col>

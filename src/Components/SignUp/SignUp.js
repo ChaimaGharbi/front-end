@@ -1,11 +1,11 @@
-import styles from './style.module.css'
+import styles from './SignUp.module.css'
 
 export default function SignUp() {
   return (
     <div >
       <h1 className={styles.h11}>s'inscrire</h1>
       <form className={styles.containerr}>
-        <div className="mb-3">
+      <div className="mb-3">
           <label for="disabledTextInput" className="form-label">
             Prenom
           </label>
@@ -29,7 +29,7 @@ export default function SignUp() {
         </div>
         <div className="mb-3">
           <label for="disabledTextInput" className="form-label">
-            Nom du service
+            Adresse
           </label>
           <input
             type="text"
@@ -40,7 +40,7 @@ export default function SignUp() {
         </div>
         <div className="mb-3">
           <label for="disabledTextInput" className="form-label">
-          Numero du telephone
+          Numero de telephone
           </label>
           <input
             type="tel"

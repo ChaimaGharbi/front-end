@@ -1,5 +1,5 @@
 import React from "react";
-import '../Css/Cards.css';
+import './Css/Cards.css';
 import FavoriteCard from '../Components/FavoriteCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -19,10 +19,8 @@ export default class FavoriteCards extends React.Component{
                 {
                     this.props.products.map((p)=>{
                         return(
-                            <Col className="column" sm={3}>
-                               <div className="col">
+                            <Col className="column" sm={1} md={2} lg={3} >
                                   <FavoriteCard product={p}  />
-                              </div>
                              </Col>
                         )
 

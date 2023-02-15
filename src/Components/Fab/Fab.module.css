@@ -1,4 +1,4 @@
 .rfab__container {
-  position: fixed;
+  position: relative;
   z-index: 99;
 }

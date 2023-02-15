@@ -1,4 +1,4 @@
-import styles from "./style.module.css";
+import styles from "./Profile.module.css";
 
 export default function () {
   return (
@@ -37,7 +37,7 @@ export default function () {
               </div>
               <div className="mb-1">
                 <label for="servicename" className={`form-label ${styles.title}`}>
-                Nom du service:
+                Adresse:
                 </label>
                 <input
                   type="text"

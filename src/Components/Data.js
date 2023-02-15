@@ -1,4 +1,4 @@
-import pencils from '../Images/pencils.jpg';
+import pencils from './Images/pencils.jpg';
 
 export const data = [
     {

@@ -1,5 +1,5 @@
-import ProductCards from 'Components/ProductCards.js';
-import {data} from 'Components/Data';
+import ProductCards from '../ProductCards.js';
+import {data} from '../Data';
 export default function Favorites(){
  
         return(

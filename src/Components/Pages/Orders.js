@@ -1,5 +1,5 @@
-import OrderCards from '../Components/OrderCards.js';
-import {data} from '../Components/Data';
+import OrderCards from '../OrderCards.js';
+import {data} from '../Data';
 export default function Favorites(){
  
         return(

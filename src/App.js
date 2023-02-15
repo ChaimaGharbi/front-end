@@ -6,9 +6,14 @@ import Fab from "./Components/Fab/Fab";
 import AddProduct from "./Components/AddProduct";
 import NavBarCommercant from "./Components/NavBarCommercant/index";
 import ProfilePage from "./Components/ProfilePage";
-import SignUp from "./Components/SignUpPage";
-import Favorites from './Pages/Favorites';
-import Orders from './Pages/Orders';
+import SignUpPage from "./Components/SignUpPage";
+import Favorites from './Components/Pages/Favorites';
+import Orders from './Components/Pages/Orders';
+import {LoginComponent} from './Components/Loginv2.0/LoginComponent';
+import Profile from './Components/Profile/Profile';
+import NavBarClient from './Components/NavBarClient';
+import SignUpClient from './Components/SignUp/SignUp';
+import ProductsClient from './Components/Pages/Products';
 
 function App() {
   return (
@@ -47,7 +52,7 @@ function App() {
           element={
             <>
               <NavBarCommercant />
-              <SignUp />
+              <SignUpPage />
             </>
           }
         ></Route>
@@ -63,25 +68,33 @@ function App() {
         <Route
           path='/'
           element={
-            <></>
+            <>
+              <LoginComponent></LoginComponent>
+            </>
           }
         ></Route>
         <Route
           path='/signup'
           element={
-            <></>
+            <>
+              <SignUpClient></SignUpClient>
+            </>
           }
         ></Route>
         <Route
           path='/profile'
           element={
-            <></>
+            <>  
+              <NavBarClient></NavBarClient>
+              <Profile></Profile>
+            </>
           }
         ></Route>
         <Route
           path='/favoris'
           element={
             <>
+             <NavBarClient></NavBarClient>
               <Favorites></Favorites>
             </>
           }
@@ -90,7 +103,17 @@ function App() {
           path='/commandes'
           element={
             <>
+              <NavBarClient></NavBarClient>
               <Orders></Orders>
+            </>
+          }
+        ></Route>
+        <Route
+          path='/products'
+          element={
+            <>
+              <NavBarClient></NavBarClient>
+              <ProductsClient></ProductsClient>
             </>
           }
         ></Route>

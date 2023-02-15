@@ -8,8 +8,8 @@ import {
   MDBRipple,
 } from "mdb-react-ui-kit";
 import products from "../../products.json";
-import "./style.css";
-import pencils from '../../Images/pencils.jpg';
+import styles from "./style.module.css";
+import pencils from '../Images/pencils.jpg';
 
 export default function Products(props) {
   const handleDelete = () => {
@@ -24,7 +24,7 @@ export default function Products(props) {
         {products.map((product) => {
           return (
             <MDBCol md="12" lg="4" className="mb-4">
-              <MDBCard key={product.id} className="mdb-card">
+              <MDBCard key={product.id} className={styles.mdb_card}>
                 <MDBRipple
                   rippleColor="light"
                   rippleTag="div"

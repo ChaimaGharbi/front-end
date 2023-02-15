@@ -1,6 +1,5 @@
 import React from "react";
-import { FaHeart } from "react-icons/fa";
-import '../Css/Cards.css';
+import './Css/Cards.css';
 import ProductCard from './ProductCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -19,7 +18,7 @@ export default class ProductCards extends React.Component{
                 {
                     this.props.products.map((p)=>{
                         return(
-                            <Col className="column" sm={3}>
+                            <Col className="column" sm={1} md={2} lg={3}>
                                <div className="col">
                                   <ProductCard product={p} />
                               </div>
