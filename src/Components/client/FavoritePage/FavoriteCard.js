@@ -1,7 +1,7 @@
 import React from "react";
 import { FiHeart } from "react-icons/fi";
 import { Card, Row, Col } from "react-bootstrap";
-import "./Css/Card.css";
+import "../Css/Card.css";
 
 export default class FavoriteCard extends React.Component {
   constructor(props) {

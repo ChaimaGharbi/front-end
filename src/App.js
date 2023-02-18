@@ -1,30 +1,35 @@
 import "./App.css";
 import React from "react";
-import Products from "./Components/Products/Products";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Fab from "./Components/Fab/Fab";
-import AddProduct from "./Components/AddProduct";
-import NavBarCommercant from "./Components/NavBarCommercant/index";
-import ProfilePage from "./Components/ProfilePage";
-import SignUpPage from "./Components/SignUpPage";
-import Favorites from './Components/Pages/Favorites';
-import Orders from './Components/Pages/Orders';
-import {LoginComponent} from './Components/Loginv2.0/LoginComponent';
-import Profile from './Components/Profile/Profile';
-import NavBarClient from './Components/NavBarClient';
-import SignUpClient from './Components/SignUp/SignUp';
-import ProductsClient from './Components/Pages/Products';
+
+import LoginCommercant from "./Components/commerçant/LoginCommerçant/LoginComponent";
+import Products from "./Components/commerçant/Products/Products";
+import OrdersCom from './Components/commerçant/Products/Orders';
+import Fab from "./Components/commerçant/Fab/Fab";
+import AddProduct from "./Components/commerçant/AddProduct";
+import NavBarCommercant from "./Components/commerçant/NavBarCommercant/index";
+import ProfilePage from "./Components/commerçant/ProfilePage";
+import SignUpPage from "./Components/commerçant/SignUpPage";
+
+import Favorites from "./Components/client/FavoritePage/Favorites";
+import Orders from "./Components/client/OrderPage/Orders";
+import { LoginComponent } from "./Components/client/LoginClient/LoginComponent";
+import Profile from "./Components/client/ProfilePage/Profile";
+import NavBarClient from "./Components/client/NavBarClient";
+import SignUpClient from "./Components/client/SignUpPage/SignUp";
+import ProductsClient from "./Components/client/ProductPage/Products";
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="commerçant" element={<LoginCommercant></LoginCommercant>}></Route>
         <Route
-          path="commerçant"
+          path="commerçant/homepage"
           element={
             <>
               <NavBarCommercant />
-              <Products name="products"></Products>
+              <Products></Products>
               <Fab></Fab>
             </>
           }
@@ -39,11 +44,11 @@ function App() {
           }
         ></Route>
         <Route
-          path="commerçant/orders"
+          path="commerçant/commandes"
           element={
             <>
               <NavBarCommercant />
-              <Products name="order"></Products>
+              <OrdersCom/>
             </>
           }
         ></Route>
@@ -51,7 +56,6 @@ function App() {
           path="commerçant/signup"
           element={
             <>
-              <NavBarCommercant />
               <SignUpPage />
             </>
           }
@@ -66,7 +70,7 @@ function App() {
           }
         ></Route>
         <Route
-          path='/'
+          path="/"
           element={
             <>
               <LoginComponent></LoginComponent>
@@ -74,7 +78,7 @@ function App() {
           }
         ></Route>
         <Route
-          path='/signup'
+          path="/signup"
           element={
             <>
               <SignUpClient></SignUpClient>
@@ -82,25 +86,25 @@ function App() {
           }
         ></Route>
         <Route
-          path='/profile'
+          path="/profile"
           element={
-            <>  
+            <>
               <NavBarClient></NavBarClient>
               <Profile></Profile>
             </>
           }
         ></Route>
         <Route
-          path='/favoris'
+          path="/favoris"
           element={
             <>
-             <NavBarClient></NavBarClient>
+              <NavBarClient></NavBarClient>
               <Favorites></Favorites>
             </>
           }
         ></Route>
         <Route
-          path='/commandes'
+          path="/commandes"
           element={
             <>
               <NavBarClient></NavBarClient>
@@ -109,7 +113,7 @@ function App() {
           }
         ></Route>
         <Route
-          path='/products'
+          path="/homepage"
           element={
             <>
               <NavBarClient></NavBarClient>

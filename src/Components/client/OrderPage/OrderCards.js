@@ -1,12 +1,12 @@
 import React from "react";
-import './Css/Cards.css';
-import ProductCard from './ProductCard';
+import '../Css/Cards.css';
+import OrderCard from './OrderCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-export default class ProductCards extends React.Component{
+export default class OrderCards extends React.Component{
     constructor(props){
         super(props);
     }
@@ -20,7 +20,7 @@ export default class ProductCards extends React.Component{
                         return(
                             <Col className="column" sm={1} md={2} lg={3}>
                                <div className="col">
-                                  <ProductCard product={p} />
+                                  <OrderCard product={p} />
                               </div>
                              </Col>
                         )

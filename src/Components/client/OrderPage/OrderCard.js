@@ -1,7 +1,7 @@
 import React from "react";
 import { BsFillBasketFill } from "react-icons/bs";
 import { Card, Row, Col } from 'react-bootstrap';
-import './Css/Card.css';
+import '../Css/Card.css';
 
 
 export default class OrderCard extends React.Component{
