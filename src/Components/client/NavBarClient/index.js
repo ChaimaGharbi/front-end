@@ -3,6 +3,7 @@ import { CgProfile } from "react-icons/cg";
 import { AiFillHome } from "react-icons/ai";
 import styles from "./style.module.css";
 import React from "react";
+import { FiHeart  } from "react-icons/fi";
 
 export default class NavBarCommercant extends React.Component {
   constructor(props) {
@@ -22,18 +23,23 @@ export default class NavBarCommercant extends React.Component {
           <i className={this.state.clicked ? `${styles.fas1} fa-times` : `${styles.fas1} fa-bars`}></i>
         </div>
         <ul className={this.state.clicked ? `${styles.nav_menu1} ${styles.active1}` : `${styles.nav_menu1}`}>
+        <li>
+            <a href="/favoris" className={styles.link1}>
+            <FiHeart  style={{fill : "grey" }} className="icon"></FiHeart>
+            </a>
+          </li>
           <li>
-            <a href="/commerçant/orders" className={styles.link1}>
+            <a href="/commandes" className={styles.link1}>
               <AiFillShopping className={styles.icon1} />Orders
             </a>
           </li>
           <li>
-            <a href="/commerçant/profile" className={styles.link1}>
+            <a href="/profile" className={styles.link1}>
               <CgProfile className={styles.icon1} />Profile
             </a>
           </li>
           <li>
-            <a href="/commerçant" className={styles.link1}>
+            <a href="/homepage" className={styles.link1}>
               <AiFillHome className={styles.icon1} />Home
             </a>
           </li>

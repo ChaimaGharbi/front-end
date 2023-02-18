@@ -1,11 +1,13 @@
-import ProductCards from '../ProductCards.js';
+import OrderCards from './OrderCards.js';
 import {data} from '../Data';
 export default function Favorites(){
  
         return(
             <div>
-               <ProductCards products={data} />
+               <OrderCards products={data} />
             </div>
 
               )
+    
+    
 }
