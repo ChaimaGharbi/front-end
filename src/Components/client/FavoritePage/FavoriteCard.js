@@ -15,15 +15,15 @@ export default class FavoriteCard extends React.Component {
           <Card.Header>
             <Row>
               <Col>
-                <Card.Img className="image" src={this.props.product.image} />
+                <Card.Img className="image" src={this.props.product.imgURL} />
               </Col>
               <Col>
-                <Card.Title>{this.props.product.Title}</Card.Title>
+                <Card.Title>{this.props.product.nom}</Card.Title>
               </Col>
             </Row>
           </Card.Header>
           <Card.Body>
-            <Card.Text>{this.props.product.Description}</Card.Text>
+            <Card.Text>{this.props.product.description}</Card.Text>
             <div>
               <p style={{ float: "left", fontSize: "30px" }}>
                 {this.props.product.Price}

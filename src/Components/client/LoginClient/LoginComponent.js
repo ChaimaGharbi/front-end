@@ -1,32 +1,32 @@
 import styles from "./LoginComponent.module.css";
+import React ,{useState,useEffect} from 'react' ;
 import { Route, Link, useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
-
+//import localStorage from 'local-storage';
+//import { type } from "os";
 export function LoginComponent(props) {
- /* const params = useParams();
-  let navigate = useNavigate();
-  const [isauthenticated, setisauthenticated] = useState(false);
-  const handleClick = async (e) => {
-    e.preventDefault();
-    localStorage.removeItem("token");
-    navigate('/');
+  const [errorMessage,SeterrorMessage]=React.useState('');
+  let navigate =useNavigate();
+  const handleSubmit = async (e) =>{
+      e.preventDefault();
+      const formData = new FormData(e.currentTarget);
+      const email=formData.get('email');
+      const mdp=formData.get('mdp');
+      
+      axios
+      .post("http://localhost:3030/client/register",{email,mdp})
+      .then((data)=>{
+        localStorage.setItem('token',data.data.access_token.id);
+        navigate("/homepage");
+      })
+     .catch((err)=>{
+      navigate("/homepage");
+      localstorage.removeItem('token');
+       SeterrorMessage("you entered a wrong email or password")
+     })
+     
+  
   }
-  const getAuthorizationHeader = () => `Bearer ${localStorage.getItem("token")}`;
-  const [id, setid] = useState("");
-  React.useEffect(() => {
-    axios
-      .get('http://localhost:3030/' + params.id, {
-        headers: { Authorization: getAuthorizationHeader() },
-      })
-      .then((data) => {setisauthenticated(true); setid(data.data.username);
-      })
-      .catch((err) => {
-        navigate('/');
-      });
-  });
-  if (!isauthenticated) {
-    return navigate('/');
-  }else {*/
   return (
     <div className={`${styles.wrapper} ${styles.fadeInDown}`}>
       <div id={styles.formContent}>
