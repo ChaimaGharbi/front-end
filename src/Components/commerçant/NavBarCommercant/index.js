@@ -4,24 +4,26 @@ import { AiFillHome } from "react-icons/ai";
 import styles from "./style.module.css";
 import React from "react";
 
-export default class NavBarCommercant extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { clicked: false };
-  }
-
-  handleClick = () => {
-    this.setState({ clicked: !this.state.clicked });
+export default function NavBarCommercant(props){
+  
+  const [clicked, setClicked] = React.useState(false);
+  const handleClick = () => {
+    setClicked(!clicked);
   };
 
-  render() {
+  const handleSignOut = async (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    window.location.href = "/";
+  };
+
     return (
       <div className={styles.navbaritems1}>
         <h1 className={styles.logo1}>logo</h1>
-        <div className={styles.menu_icons1} onClick={this.handleClick}>
-          <i className={this.state.clicked ? `${styles.fas1} fa-times` : `${styles.fas1} fa-bars`}></i>
+        <div className={styles.menu_icons1} onClick={handleClick}>
+          <i className={clicked ? `${styles.fas1} fa-times` : `${styles.fas1} fa-bars`}></i>
         </div>
-        <ul className={this.state.clicked ? `${styles.nav_menu1} ${styles.active1}` : `${styles.nav_menu1}`}>
+        <ul className={clicked ? `${styles.nav_menu1} ${styles.active1}` : `${styles.nav_menu1}`}>
           <li>
             <a href="/commerçant/commandes" className={styles.link1}>
               <AiFillShopping className={styles.icon1} />Orders
@@ -38,10 +40,9 @@ export default class NavBarCommercant extends React.Component {
             </a>
           </li>
           <li>
-            <button className="btn btn-primary">Sign out</button>
+            <button className="btn btn-primary" onClick={handleSignOut}>Sign out</button>
           </li>
         </ul>
       </div>
     );
   }
-}
