@@ -49,7 +49,7 @@ export default function () {
   useEffect(()=>{
     axios
     .get('http://localhost:3030/commercant/'+commerçant_id, {
-      headers: {Authorization: "Bearer " + localStorage.getItem("access_token")}
+      headers: {Authorization: `Bearer ${localStorage.getItem("access_token")}`}
     })
     .then((response) => {
       setFirstName(response.data.firstname);
@@ -62,7 +62,7 @@ export default function () {
     .catch((error) => {
       navigate('/commerçant');
     })
-  }, [commerçant_id]);
+  }, []);
   return (
     <div className="container">
       <div
