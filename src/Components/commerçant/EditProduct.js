@@ -3,34 +3,32 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import React from "react";
+import styles from "./ProfilePage/style.module.css";
 
 export default function EditProduct() {
   const navigate = useNavigate();
   const [commerçant_id, setId] = useState(localStorage.getItem("commerçant_id"));
-  const [produit, setProduit] = useState([]);
-  const [errorMessages, setErrorMessages] = React.useState("");
   const product_id = localStorage.getItem("product_id");
-  const [imgURL, setImageURL] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [imageURL, setImageURL] = useState(null);
+  const imgURL = imageURL;
   const [nom, setNom] = useState("");
   const [prix, setPrix] = useState("");
   const [description, setDescription] = useState("");
   const [stock, setStock] = useState("");
 
-  const handleImageURLUpdate = (url) => {
-    setImageURL(url);
-  };
   const handleNomChange = (e) => {
     setNom(e.target.value);
-  }
+  };
   const handlePrixChange = (e) => {
     setPrix(e.target.value);
-  }
+  };
   const handleDescChange = (e) => {
     setDescription(e.target.value);
-  }
+  };
   const handleStockChange = (e) => {
     setStock(e.target.value);
-  }
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -41,7 +39,7 @@ export default function EditProduct() {
           prix,
           imgURL,
           description,
-          stock
+          stock,
         },
         {
           headers: { Authorization: "Bearer " + localStorage.getItem("access_token") },
@@ -49,23 +47,26 @@ export default function EditProduct() {
       );
       navigate("/commerçant/homepage");
     } catch (error) {
-      setErrorMessages("There is an error!");
       navigate("/commerçant/editproduit");
     }
   };
-
+  useEffect(() => {
+    if (selectedImage) {
+      const url = "/images/" + selectedImage.name;
+      setImageURL(url);
+    }
+  }, [selectedImage]);
   React.useEffect(() => {
     axios
       .get("http://localhost:3030/produit/" + product_id, {
         headers: { Authorization: "Bearer " + localStorage.getItem("access_token") },
       })
       .then((response) => {
-        setProduit(response.data);
-        setNom(produit.nom);
-        setPrix(produit.prix);
-        setDescription(produit.description);
-        setStock(produit.stock);
-        setImageURL(produit.imgURL);
+        setNom(response.data.nom);
+        setPrix(response.data.prix);
+        setDescription(response.data.description);
+        setStock(response.data.stock);
+        setImageURL(response.data.imgURL);
       })
       .catch((error) => {
         console.log(error);
@@ -74,79 +75,91 @@ export default function EditProduct() {
   }, [product_id]);
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      action={`/produit/edit/${product_id}`}
-      method="PUT"
-    >
-      <AddPicture onImageURLUpdate={handleImageURLUpdate}></AddPicture>
-      <div className="form-row">
-        <div className="col-7 m-5">
-          <label htmlFor="nomProduit" className="col-sm-2 col-form-label">
-            Nom du Produit
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="nomProduit"
-            name="nomProduit"
-            defaultValue={produit.nom}
-            onChange={handleNomChange}
-          />
+    <div className="container">
+      <div
+        className={`${styles.d_flex} justify-content-center align-items-center ${styles.profile}`}
+      >
+        <div className={styles.upload}>
+          <img src={imageURL} className={styles.profile_image}></img>
+          <div className={styles.round}>
+            <input
+              accept="image/*"
+              type="file"
+              id="select-image"
+              style={{ display: "none" }}
+              onChange={(e) => setSelectedImage(e.target.files[0])}
+            />
+            <label htmlFor="select-image">
+              <i className={`fa fa-camera`}></i>
+            </label>
+          </div>
+        </div>
+        <div className={styles.profile_info}>
+          <form
+            className={styles.modifier_form}
+            onSubmit={handleSubmit}
+            action={`/produit/edit/${product_id}`}
+            method="PUT"
+          >
+            <div className="mb-1">
+              <label htmlFor="nomProduit" className={`form-label ${styles.title}`}>
+                Nom du Produit
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="nomProduit"
+                name="nomProduit"
+                defaultValue={nom}
+                onChange={handleNomChange}
+              />
+            </div>
+            <div className="mb-1">
+              <label htmlFor="PrixProduit" className={`form-label ${styles.title}`}>
+                Prix du Produit
+              </label>
+              <input
+                type="number"
+                step="0.001"
+                className="form-control"
+                id="PrixProduit"
+                name="PrixProduit"
+                defaultValue={prix}
+                onChange={handlePrixChange}
+              />
+            </div>
+            <div className="mb-1">
+              <label htmlFor="desc" className={`form-label ${styles.title}`}>
+                Description
+              </label>
+              <textarea
+                className="form-control"
+                id="desc"
+                name="desc"
+                defaultValue={description}
+                onChange={handleDescChange}
+              />
+            </div>
+            <div className="mb-1">
+              <label htmlFor="Stock" className={`form-label ${styles.title}`}>
+                Stock
+              </label>
+              <input
+                type="number"
+                step="0.001"
+                className="form-control"
+                id="Stock"
+                name="Stock"
+                defaultValue={stock}
+                onChange={handleStockChange}
+              />
+            </div>
+            <button type="submit" className="btn btn-primary form-control mt-3">
+              Modifier
+            </button>
+          </form>
         </div>
       </div>
-      <div className="form-row">
-        <div className="col-7 m-5">
-          <label htmlFor="PrixProduit" className="col-sm-2 col-form-label">
-            Prix du Produit
-          </label>
-          <input
-            type="number"
-            step="0.001"
-            className="form-control"
-            id="PrixProduit"
-            name="PrixProduit"
-            defaultValue={produit.prix}
-            onChange={handlePrixChange}
-          />
-        </div>
-      </div>
-      <div className="form-row">
-        <div className="col-7 m-5">
-          <label htmlFor="desc" className="col-sm-2 col-form-label">
-            Description
-          </label>
-          <textarea
-            className="form-control"
-            id="desc"
-            name="desc"
-            defaultValue={produit.description}
-            onChange={handleDescChange}
-          />
-        </div>
-      </div>
-      <div className="form-row">
-        <div className="col-7 m-5">
-          <label htmlFor="Stock" className="col-sm-2 col-form-label">
-            Stock
-          </label>
-          <input
-            type="number"
-            step="0.001"
-            className="form-control"
-            id="Stock"
-            name="Stock"
-            defaultValue={produit.stock}
-            onChange={handleStockChange}
-          />
-        </div>
-      </div>
-      {/*errorMessages && <p style={{color: 'red', fontStyle: 'italic', textAlign: 'center'}}>{errorMessages}</p>*/}
-      <div className="col-auto mx-5">
-        <button type="submit" className="btn btn-primary mb-2 ">
-          Modifier
-        </button>
-      </div>
-    </form>
+    </div>
   );
 }

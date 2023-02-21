@@ -8,6 +8,7 @@ export default function LoginComponent(props) {
   const [errorMessages, setErrorMessages] = React.useState('');
   const [isauthenticated, setIsAuthenticated] = React.useState(false);
   let navigate = useNavigate();
+  localStorage.clear();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
