@@ -19,6 +19,7 @@ import Profile from "./Components/client/ProfilePage/Profile";
 import NavBarClient from "./Components/client/NavBarClient";
 import SignUpClient from "./Components/client/SignUpPage/SignUp";
 import ProductsClient from "./Components/client/ProductPage/Products";
+import EditProduct from './Components/commerçant/EditProduct';
 
 import Summary from "./Components/commerçant/Summary/Summary";
 
@@ -69,6 +70,15 @@ function App() {
           element={
             <>
               <SignUpPage />
+            </>
+          }
+        ></Route>
+        <Route
+          path='commerçant/editproduit'
+          element={
+            <>
+              <NavBarCommercant />
+              <EditProduct></EditProduct>
             </>
           }
         ></Route>
