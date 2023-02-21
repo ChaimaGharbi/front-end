@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginCommercant from "./Components/commerçant/LoginCommerçant/LoginComponent";
 import Products from "./Components/commerçant/Products/Products";
 import OrdersCom from './Components/commerçant/Products/Orders';
+
 import Fab from "./Components/commerçant/Fab/Fab";
 import AddProduct from "./Components/commerçant/AddProduct";
 import NavBarCommercant from "./Components/commerçant/NavBarCommercant/index";
@@ -20,6 +21,8 @@ import SignUpClient from "./Components/client/SignUpPage/SignUp";
 import ProductsClient from "./Components/client/ProductPage/Products";
 import EditProduct from './Components/commerçant/EditProduct';
 
+import Summary from "./Components/commerçant/Summary/Summary";
+
 function App() {
   return (
     <Router>
@@ -32,6 +35,15 @@ function App() {
               <NavBarCommercant />
               <Products></Products>
               <Fab></Fab>
+            </>
+          }
+        ></Route>
+        <Route
+          path="commerçant/summary"
+          element={
+            <>
+              <NavBarCommercant />
+              <Summary/>
             </>
           }
         ></Route>

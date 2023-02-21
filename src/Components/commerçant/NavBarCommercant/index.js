@@ -1,4 +1,5 @@
-import { AiFillShopping } from "react-icons/ai";
+import { AiFillShopping  } from "react-icons/ai";
+import { BiStats  } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
 import { AiFillHome } from "react-icons/ai";
 import styles from "./style.module.css";
@@ -23,7 +24,16 @@ export default function NavBarCommercant(props){
         <div className={styles.menu_icons1} onClick={handleClick}>
           <i className={clicked ? `${styles.fas1} fa-times` : `${styles.fas1} fa-bars`}></i>
         </div>
-        <ul className={clicked ? `${styles.nav_menu1} ${styles.active1}` : `${styles.nav_menu1}`}>
+
+        <ul className={this.state.clicked ? `${styles.nav_menu1} ${styles.active1}` : `${styles.nav_menu1}`}>
+          
+
+          <li>
+            <a href="/commerçant/summary" className={styles.link1}>
+              <BiStats className={styles.icon1} />Summary
+            </a>
+          </li>
+         
           <li>
             <a href="/commerçant/commandes" className={styles.link1}>
               <AiFillShopping className={styles.icon1} />Orders
