@@ -1,0 +1,37 @@
+@keyframes heartbeat {
+     0%{
+          transform: scale(1);
+     }
+     50%{
+          transform: scale(1.25);
+     }
+     100%{
+          transform: scale(1);
+     }
+     
+}
+.image{
+     width: 200px;
+     height: 150px;
+}
+.icon{
+    font-size: 35px;
+    color:rgb(182, 173, 173);
+    margin-top: 7px;
+     width: 70px;
+     outline: none;
+     text-transform: uppercase;
+     cursor: pointer;
+     font-weight: bold;
+     float:right;
+     opacity: 1;  
+}
+
+.icon:hover{
+animation: heartbeat 1s infinite;
+opacity: 1;
+transform: 500ms;
+}
+
+
+ 
