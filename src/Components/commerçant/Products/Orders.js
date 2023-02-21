@@ -17,34 +17,37 @@ export default function Orders() {
   const [orders, setOrders] = useState([]);
   const [orderDetails, setOrderDetails] = useState([]);
   const commerçant_id = localStorage.getItem("commerçant_id");
-  const [showButtons, setShowButtons] = useState(localStorage.getItem("showButtons"));
-  const handleRegeteeCommande = (produit_id) => {
-    const order = orders.find((order) => order.produit_id === produit_id);
-    const client_id = order.client_id;
+  const handleRegeteeCommande = (produit_id, client_id) => {
     axios
       .patch(
         `http://localhost:3030/commercant/delete/${commerçant_id}/${produit_id}/${client_id}`
       )
       .then((response) => {
-        order.status = response.data.status;
-        setShowButtons(false);
-        localStorage.setItem("showButtons", "false");
+        setOrderDetails((prevOrderDetails) =>
+          prevOrderDetails.map((order) =>
+            order.produit_id === produit_id && order.client_id === client_id
+              ? { ...order, status: response.data.status, showButtons: false }
+              : order
+          )
+        );
       })
       .catch((error) => {
         console.log(error);
       });
   };
-  const handleAcceptCommande = (produit_id) => {
-    const order = orders.find((order) => order.produit_id === produit_id);
-    const client_id = order.client_id;
+  const handleAcceptCommande = (produit_id, client_id) => {
     axios
       .patch(
         `http://localhost:3030/commercant/accepte/${commerçant_id}/${produit_id}/${client_id}`
       )
       .then((response) => {
-        order.status = response.data.status;
-        setShowButtons(false);
-        localStorage.setItem("showButtons", "false");
+        setOrderDetails((prevOrderDetails) =>
+          prevOrderDetails.map((order) =>
+            order.produit_id === produit_id && order.client_id === client_id
+              ? { ...order, status: response.data.status, showButtons: false }
+              : order
+          )
+        );
       })
       .catch((error) => {
         console.log(error);
@@ -70,6 +73,7 @@ export default function Orders() {
             imgURL: produit.data.imgURL,
             client_id: order.client_id,
             status: order.status,
+            showButtons: order.status === "en cours de traitement",
           });
         }
         setOrderDetails(orderDetails);
@@ -78,7 +82,8 @@ export default function Orders() {
         console.log(error);
         navigate("/commerçant/homepage");
       });
-  }, [commerçant_id, navigate, orders]);
+  }, [commerçant_id, navigate]);
+  console.log(orders);
   return (
     <MDBContainer className="my-5 text-center">
       <h4 className="mt-4 mb-5">
@@ -111,14 +116,14 @@ export default function Orders() {
                   <h5 className="card-title mb-3">{order.nom}</h5>
                   <p>{order.description}</p>
                   <h6 className="mb-3">{order.prix} DT</h6>
-                  {showButtons && (
+                  {order.showButtons && (
                     <>
                       <button
                         className="btn bg-success text-white mx-2"
                         id="OrderPage"
                         style={{ display: "inline-block" }}
                         onClick={() => {
-                          handleAcceptCommande(order.produit_id);
+                          handleAcceptCommande(order.produit_id, order.client_id);
                         }}
                       >
                         <i className="fa fa-check" aria-hidden="true"></i>
@@ -128,14 +133,26 @@ export default function Orders() {
                         id="OrderPage"
                         style={{ display: "inline-block" }}
                         onClick={() => {
-                          handleRegeteeCommande(order.produit_id);
+                          handleRegeteeCommande(order.produit_id, order.client_id);
                         }}
                       >
                         <i className="fa fa-times" aria-hidden="true"></i>
                       </button>
                     </>
                   )}
-                  {!showButtons && <p style={order.status=== "rejetée"? {color: 'red'} : {color: 'green'}}>Status: {order.status}</p>}
+                  {!order.showButtons && (
+                    <p
+                      style={
+                        order.status === "rejetée"
+                          ? { color: "red" }
+                          : order.status === "acceptée"
+                          ? { color: "green" }
+                          : { display: "none" }
+                      }
+                    >
+                      Status: {order.status}
+                    </p>
+                  )}
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
