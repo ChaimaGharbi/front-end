@@ -8,7 +8,7 @@ export default function AddProduct() {
   const navigate = useNavigate();
   //const [isauthenticated, setIsAuthenticated] = useState(false);
   const formRef = React.useRef(null);
-  const id = useState(localStorage.getItem("commerçant_id"));
+  const id = localStorage.getItem("commerçant_id");
   const [selectedImage, setSelectedImage] = useState(null);
   const [imageURL, setImageURL] = useState(null);
   const [errorMessages, setErrorMessages] = React.useState("");
@@ -27,8 +27,9 @@ export default function AddProduct() {
     const description = formData.get("desc");
     const stock = formData.get("Stock");
     const imgURL = imageURL;
+    console.log(nom, prix, description, stock, imgURL);
     try {
-      const resp = await axios
+      await axios
         .post(
           "http://localhost:3030/produit/add/" + id,
           {
@@ -38,7 +39,6 @@ export default function AddProduct() {
             stock,
             imgURL,
           },
-          { Headers: { Authorization: "Bearer " + localStorage.getItem("access_token") } }
         )
         .then((response) => {
           navigate("/commerçant/homepage");
